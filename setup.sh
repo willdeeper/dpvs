@@ -1,4 +1,5 @@
 #!/bin/bash
+git submodule update --init --remote --recursive --progress
 # 删除debian内置的dpdk
 # 避免include header冲突
 sudo apt remove libdpdk-dev -y
