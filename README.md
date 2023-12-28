@@ -1,3 +1,11 @@
+暂时不能编译 dpdk-stable-20.11.1: dpdk-kni 依赖 netif_rx_ni，v5.0 内核版本才有，v6接口名就改了。
+```
+https://mails.dpdk.org/archives/dev/2022-June/243596.html
+```
+
+我机器是v6.6.8内核，使用dpdk v23.11 没有kni，dpvs无法编译。
+
+
 ```bash
 apt install meson ninja-build linux-headers-$(uname -r) -y
 cp patch/dpdk-stable-20.11.1/*.patch dpdk-stable-20.11.1/
@@ -283,12 +291,12 @@ Please refer to the [CONTRIBUTING](./CONTRIBUTING.md) file for details.
 
 Currently, DPVS has been widely accepted by dozens of community cooperators, who have successfully used and contributed a lot to DPVS. We just list some of them alphabetically as below.
 
-|[**CMSoft**](http://cmsoft.10086.cn/)      | ![cmsoft](./pic/community/cmsoft.png)  |
-| ----------------------------------------- | -------------------------------------- |
-|[**IQiYi**](https://www.iqiyi.com/)        | ![iqiyi](./pic/community/iqiyi.png)    |
-|[**NetEase**](https://www.163yun.com/)     | ![netease](./pic/community/netease.png)|
-|[**Shopee**](https://shopee.com/)          | ![shopee](./pic/community/shopee.png)  |
-|[**Xiaomi**](https://www.mi.com/)          | ![todo](./pic/community/todo.png)      |
+| [**CMSoft**](http://cmsoft.10086.cn/)  | ![cmsoft](./pic/community/cmsoft.png)   |
+| -------------------------------------- | --------------------------------------- |
+| [**IQiYi**](https://www.iqiyi.com/)    | ![iqiyi](./pic/community/iqiyi.png)     |
+| [**NetEase**](https://www.163yun.com/) | ![netease](./pic/community/netease.png) |
+| [**Shopee**](https://shopee.com/)      | ![shopee](./pic/community/shopee.png)   |
+| [**Xiaomi**](https://www.mi.com/)      | ![todo](./pic/community/todo.png)       |
 
 # Contact Us
 
