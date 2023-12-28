@@ -1,5 +1,5 @@
 [submodule "dpdk"]
 	path = dpdk
 	url = https://github.com/willdeeper/dpdk.git
-	branch = stable-v20-11-1
+	branch = stable-v21.02
 	ignore = dirty

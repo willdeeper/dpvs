@@ -5,8 +5,8 @@ git submodule update --init --remote --recursive --progress
 sudo apt update
 sudo apt remove libdpdk-dev -y
 sudo apt autoremove
-sudo apt install pkg-config meson ninja-build libnuma-dev libpopt-dev linux-headers-$(uname -r) -y
-
+sudo apt install pkg-config python3-pip meson ninja-build libnuma-dev libpopt-dev linux-headers-$(uname -r) -y
+pip3 install pyelftools
 cp patch/dpdk-stable-20.11.1/*.patch dpdk
 cd dpdk
 patch -p1 < 0001-kni-use-netlink-event-for-multicast-driver-part.patch
