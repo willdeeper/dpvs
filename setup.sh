@@ -1,6 +1,10 @@
 #!/bin/bash
-sudo apt purge libdpdk-dev -y
+# 删除debian内置的dpdk
+# 避免include header冲突
+sudo apt remove libdpdk-dev -y
+sudo apt autoremove
 sudo apt install meson ninja-build linux-headers-$(uname -r) -y
+
 cp patch/dpdk-stable-20.11.1/*.patch dpdk-stable-20.11.1/
 cd dpdk-stable-20.11.1/
 patch -p1 -f < 0001-kni-use-netlink-event-for-multicast-driver-part.patch
