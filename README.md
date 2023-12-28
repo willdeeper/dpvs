@@ -5,21 +5,16 @@ https://mails.dpdk.org/archives/dev/2022-June/243596.html
 
 我机器是v6.6.8内核，使用dpdk v23.11 没有kni，dpvs无法编译。
 
+## setup
 
 ```bash
-apt install meson ninja-build linux-headers-$(uname -r) -y
-cp patch/dpdk-stable-20.11.1/*.patch dpdk-stable-20.11.1/
-cd dpdk-stable-20.11.1/
-patch -p1 < 0001-kni-use-netlink-event-for-multicast-driver-part.patch
-patch -p1 < 0002-pdump-change-dpdk-pdump-tool-for-dpvs.patch
-cd ../
-cd dpdk-stable-20.11.1
-mkdir dpdklib                 # user desired install folder
-mkdir dpdkbuild               # user desired build folder
-meson -Denable_kmods=true -Dprefix=$(pwd)/dpdklib dpdkbuild
-ninja -C dpdkbuild
-cd dpdkbuild; ninja install
-export PKG_CONFIG_PATH=$(pwd)/../dpdklib/lib64/pkgconfig/
+./setup.sh
+```
+
+## build
+
+```bash
+./build.sh
 ```
 
 ![Build](https://github.com/iqiyi/dpvs/workflows/Build/badge.svg)  ![Run](https://github.com/iqiyi/dpvs/workflows/Run/badge.svg)
