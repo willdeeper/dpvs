@@ -20,6 +20,8 @@
  *
  * it includes some mbuf related functions beyond dpdk mbuf API.
  */
+#include <stdio.h>
+#include <stdint.h>
 #include <assert.h>
 #include <rte_mbuf_dyn.h>
 #include <rte_net.h>
