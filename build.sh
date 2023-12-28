@@ -6,7 +6,7 @@ mkdir dpdkbuild               # user desired build folder
 meson -Denable_kmods=true -Dprefix=$(pwd)/dpdklib dpdkbuild
 ninja -C dpdkbuild
 cd dpdkbuild; ninja install
-export PKG_CONFIG_PATH=$(pwd)/../dpdklib/lib64/pkgconfig/
+export PKG_CONFIG_PATH=$(pwd)/dpdk-stable-20.11.1/dpdklib/lib64/pkgconfig/
 
 cd $HOME
 make -j$(nproc)
