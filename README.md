@@ -12,6 +12,7 @@ https://mails.dpdk.org/archives/dev/2022-June/243596.html
 ```
 
 ## build
+在v5.4.143编译成功
 
 ```bash
 ./build.sh
